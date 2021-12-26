@@ -15,20 +15,20 @@ inputBox.onkeyup = ()=>{
 showTasks();
 addBtn.onclick = ()=>{
     let userData = inputBox.value;
-    let getLocalStorage = localStorage.getItem("New Todo");
+    let getLocalStorage = localStorage.getItem("Todo");
     if(getLocalStorage == null){
         listArr = []; 
     }else{
         listArr = JSON.parse(getLocalStorage);
     }
     listArr.push(userData);
-    localStorage.setItem("New Todo", JSON.stringify(listArr));
+    localStorage.setItem("Todo", JSON.stringify(listArr));
     showTasks();
     addBtn.classList.remove("active");
 }
 
 function showTasks(){
-    let getLocalStorage = localStorage.getItem("New Todo");
+    let getLocalStorage = localStorage.getItem("Todo");
     if(getLocalStorage == null){
         listArr = []; 
     }else{
@@ -51,14 +51,14 @@ function showTasks(){
 }
 
 function deleteTask(index){
-    let getLocalStorage = localStorage.getItem("New Todo");
+    let getLocalStorage = localStorage.getItem("Todo");
     listArr = JSON.parse(getLocalStorage);
     listArr.splice(index, 1);
-    localStorage.setItem("New Todo", JSON.stringify(listArr));
+    localStorage.setItem("Todo", JSON.stringify(listArr));
     showTasks();
 }
 deleteAllButton.onclick = () =>{
     listArr = [];
-    localStorage.setItem("New Todo", JSON.stringify(listArr));
+    localStorage.setItem("Todo", JSON.stringify(listArr));
     showTasks();
 }
