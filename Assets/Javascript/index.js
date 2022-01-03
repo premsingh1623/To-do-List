@@ -51,8 +51,6 @@ function showTasks(){
 }
 
 function deleteTask(index){
-    let getLocalStorage = localStorage.getItem("Todo");
-    listArr = JSON.parse(getLocalStorage);
     listArr.splice(index, 1);
     localStorage.setItem("Todo", JSON.stringify(listArr));
     showTasks();

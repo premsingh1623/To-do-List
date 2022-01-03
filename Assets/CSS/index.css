@@ -8,9 +8,16 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+:root {
+  --white-colour: white;
+  --selection-colour: palevioletred;
+  --gray-colour: gray;
+  --bisque-colour: bisque;
+  --red-colour: red;
+}
 ::selection {
-  color: white;
-  background-color: palevioletred;
+  color: var(--white-colour);
+  background-color: var(--selection-colour);
 }
 body {
   background: linear-gradient(
@@ -24,7 +31,7 @@ body {
   max-width: 400px;
   width: 100%;
   height: fit-content;
-  background-color: white;
+  background-color: var(--white-colour);
   padding: 2rem;
 }
 .wrapper header {
@@ -41,7 +48,7 @@ body {
 .input input {
   width: 85%;
   height: 100%;
-  border: 1px solid gray;
+  border: 1px solid var(--gray-colour);
   font-size: 15px;
   border-radius: 5px;
   padding-left: 10px;
@@ -50,7 +57,7 @@ body {
   width: 15%;
   border: none;
   background-color: rgb(248 57 159);
-  color: white;
+  color: var(--white-colour);
   font-size: 20px;
   cursor: pointer;
   border-radius: 5px;
@@ -77,7 +84,7 @@ body {
   line-height: 45px;
   margin-bottom: 10px;
   border-radius: 5px;
-  background-color: bisque;
+  background-color: var(--bisque-colour);
   padding: 0 15px;
   cursor: default;
   overflow: hidden;
@@ -90,7 +97,7 @@ body {
   color: rgb(243, 231, 231);
   width: 40px;
   text-align: center;
-  background-color: red;
+  background-color: var(--red-colour);
   cursor: pointer;
   border-radius: 0 5px 5px 0;
   transition: all 0.3s ease;
@@ -108,7 +115,7 @@ body {
 .footer button {
   border: none;
   background-color: rgb(248 57 159);
-  color: white;
+  color: var(--white-colour);
   font-size: 15px;
   cursor: pointer;
   border-radius: 5px;
@@ -121,14 +128,14 @@ body {
   pointer-events: auto;
 }
 @media screen and (max-width: 352px) {
-  .footer{
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .footer span{
-      font-size: 13px;
-      margin-bottom: 15px;
+  .footer span {
+    font-size: 13px;
+    margin-bottom: 15px;
   }
   .input button {
     width: 20%;
